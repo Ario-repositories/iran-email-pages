@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sanctions · Iran</title><style>/* consistent with previous, abbreviated */</style></head>
+<body>
+<div class="card"><a href="index.html" class="back">← main</a><h2>⚖️ SANCTIONS REQUEST</h2><div class="recipient-box"><div class="emails">RELEX-SANCTIONS@ec.europa.eu; HR-Delegations@eeas.europa.eu; fcdo.correspondence@fcdo.gov.uk; DRL-Public@state.gov; Iran-Press@state.gov</div></div>
+<div class="btn-group"><button class="btn mobile" id="mobileSanc">📱 mobile</button><button class="btn web" id="webSanc">🌐 gmail</button></div>
+<div class="copy-section"><button class="copy-btn" id="copyAddrS">📧 addresses</button><button class="copy-btn" id="copySubS">📌 subject</button><button class="copy-btn" id="copyBodyS">📄 body</button><div id="successMsgS"></div>
+<div><strong>subject:</strong> Request for Immediate Targeted Sanctions in Response to Imminent Executions in Iran</div>
+<div class="body-preview" id="bodySanc">
+Dear Sir or Madam,
+
+We respectfully submit documentation regarding imminent executions and systematic protest-related detentions in Iran.
+
+Materials include:
+Nearly 2,000 detainee names
+Approximately 400 detailed case files with photographs and basic information
+
+While not all cases are fully documented, available reports indicate serious concerns about arbitrary detention and lack of due process.
+
+We respectfully request consideration of:
+Targeted sanctions against judges issuing protest-related death sentences
+Sanctions against prison authorities implicated in mistreatment or incommunicado detention
+Asset freezes and travel bans under applicable human rights sanctions regimes
+Coordinated transatlantic action
+
+Full documentation:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+Targeted accountability measures may help deter further executions.
+
+Respectfully,
+[Your Name / Country]
+</div></div>
+<script>const sancMails = ["RELEX-SANCTIONS@ec.europa.eu","HR-Delegations@eeas.europa.eu","fcdo.correspondence@fcdo.gov.uk","DRL-Public@state.gov","Iran-Press@state.gov"];
+const subjSanc = "Request for Immediate Targeted Sanctions in Response to Imminent Executions in Iran";
+const bodySanc = document.getElementById('bodySanc').innerText;
+function showS(id){document.getElementById(id).innerHTML='<div class="success-msg">✓ copied</div>'; setTimeout(()=>document.getElementById(id).innerHTML='',2000);}
+document.getElementById('mobileSanc').onclick = ()=> location.href = `mailto:${sancMails.join(',')}?subject=${encodeURIComponent(subjSanc)}&body=${encodeURIComponent(bodySanc)}`;
+document.getElementById('webSanc').onclick = ()=> window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${sancMails.join(',')}&su=${encodeURIComponent(subjSanc)}&body=${encodeURIComponent(bodySanc)}`);
+document.getElementById('copyAddrS').onclick = ()=> navigator.clipboard.writeText(sancMails.join('; ')).then(()=>showS('successMsgS'));
+document.getElementById('copySubS').onclick = ()=> navigator.clipboard.writeText(subjSanc).then(()=>showS('successMsgS'));
+document.getElementById('copyBodyS').onclick = ()=> navigator.clipboard.writeText(bodySanc).then(()=>showS('successMsgS'));
+</script>
+</body>
+</html>

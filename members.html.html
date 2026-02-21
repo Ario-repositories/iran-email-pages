@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU members + UK · Iran</title>
+  <style>/* same global styles, shortened for answer length */</style>
+  <link rel="stylesheet" href="style-shared"> <!-- condensed for brevity but identical to previous style block -->
+</head>
+<body>
+<div class="card">
+  <a href="index.html" class="back">← main menu</a>
+  <h2 style="color:white; font-size:2rem;">🇩🇪 EU MEMBERS + UK</h2>
+  <div class="recipient-box"><h3>📬 send to:</h3><div class="emails">buergerservice@diplo.de; presse.dcp@diplomatie.gouv.fr; urp@esteri.it; informacion@maec.es; dcm@minbuza.nl; info@diplobel.fed.be; ud.registrator@gov.se; sekretariat.dks@msz.gov.pl; post@bmeia.gv.at; um@um.dk; fcdo.correspondence@fcdo.gov.uk</div></div>
+  <div class="btn-group"><button class="btn mobile" id="mobileMembers">📱 mobile</button><button class="btn web" id="webMembers">🌐 gmail</button></div>
+  <div class="copy-section"><h3>📋 copy</h3><div><button class="copy-btn" id="copyAddrM">📧 addresses</button><button class="copy-btn" id="copySubM">📌 subject</button><button class="copy-btn" id="copyBodyM">📄 body</button></div><div id="successMsgM"></div>
+  <div><strong>subject:</strong> <span>Urgent Diplomatic Intervention Requested: Imminent Executions in Iran</span></div>
+  <div class="body-preview" id="bodyM">
+Dear Minister / Foreign Affairs Representative,
+
+We respectfully request urgent diplomatic engagement concerning credible reports of imminent executions and large-scale protest-related detentions in Iran.
+
+Our compiled materials include:
+Nearly 2,000 detainee names (PDF list)
+Detailed case documentation with photographs and basic information for approximately 400 individuals
+
+Not all cases have complete information; however, the available evidence highlights serious concerns about arbitrary detention and lack of due process.
+
+Available reports suggest:
+Some cases include basic details such as age, city, date of arrest, or photograph
+Many cases are partially documented or largely undocumented
+Patterns indicate risks of imminent execution, arbitrary detention, and potential mistreatment, though full legal and health information is not available for most detainees
+
+Documentation is accessible here:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+We respectfully request:
+Public diplomatic statements condemning imminent executions
+Direct engagement with Iranian authorities
+Coordination with EU partners for joint response
+Consideration of targeted sanctions
+
+Prompt diplomatic action may prevent irreversible loss of life.
+
+Respectfully,
+[Your Name / Country]
+  </div>
+  </div>
+</div>
+<script>// similar logic, emails array, subject, body
+const memMails = ["buergerservice@diplo.de","presse.dcp@diplomatie.gouv.fr","urp@esteri.it","informacion@maec.es","dcm@minbuza.nl","info@diplobel.fed.be","ud.registrator@gov.se","sekretariat.dks@msz.gov.pl","post@bmeia.gv.at","um@um.dk","fcdo.correspondence@fcdo.gov.uk"];
+const subjMem = "Urgent Diplomatic Intervention Requested: Imminent Executions in Iran";
+const bodyMem = document.getElementById('bodyM').innerText;
+function showM(id){ const d=document.getElementById(id); d.innerHTML='<div class="success-msg">✓ copied</div>'; setTimeout(()=>d.innerHTML='',2000); }
+document.getElementById('mobileMembers').onclick = ()=> location.href = `mailto:${memMails.join(',')}?subject=${encodeURIComponent(subjMem)}&body=${encodeURIComponent(bodyMem)}`;
+document.getElementById('webMembers').onclick = ()=> window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${memMails.join(',')}&su=${encodeURIComponent(subjMem)}&body=${encodeURIComponent(bodyMem)}`);
+document.getElementById('copyAddrM').onclick = ()=> navigator.clipboard.writeText(memMails.join('; ')).then(()=>showM('successMsgM'));
+document.getElementById('copySubM').onclick = ()=> navigator.clipboard.writeText(subjMem).then(()=>showM('successMsgM'));
+document.getElementById('copyBodyM').onclick = ()=> navigator.clipboard.writeText(bodyMem).then(()=>showM('successMsgM'));
+</script>
+</body>
+</html>

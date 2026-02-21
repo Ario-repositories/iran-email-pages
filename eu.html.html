@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EU institutions · Iran alert</title>
+  <style>* {margin:0; padding:0; box-sizing:border-box; font-family:'Inter',sans-serif;} body {background: linear-gradient(145deg, #2b1a4a, #4a2b7a, #6b3f9e); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.2rem;}.card {max-width:950px; width:100%; background: rgba(0,0,0,0.3); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 2.5rem; padding: 2rem;}.back { display:inline-block; margin-bottom:1.5rem; background:rgba(255,255,255,0.1); padding:0.4rem 1.2rem; border-radius:40px; color:white; text-decoration:none;}.h2 {color:white; font-size:2rem; margin-bottom:1.5rem;}.recipient-box { background: rgba(20,10,40,0.7); border-radius:2rem; padding:1.5rem; margin-bottom:1.8rem; border:1px solid #9f7aea;}.emails {color:#fffcc; word-break:break-word; background:#1e102e; padding:1rem 1.5rem; border-radius:3rem;}.btn-group { display:flex; flex-wrap:wrap; gap:1rem; margin:1.8rem 0;}.btn { border:none; padding:1rem 2rem; border-radius:60px; font-weight:600; cursor:pointer; color:white;}.btn.mobile { background:#1f8b4c;}.btn.web { background:#1f4f8b;}.copy-section { background:rgba(0,0,0,0.5); border-radius:2rem; padding:1.8rem; margin:1.8rem 0; border:1px solid #8a6de0;}.copy-btn { background:#352b55; border:1px solid #ba9eff; padding:0.8rem 1.8rem; border-radius:3rem; color:white; cursor:pointer;}.success-msg { background:#1f8b4c; color:white; padding:0.7rem 1.5rem; border-radius:100px; animation:fade 2s;}@keyframes fade{0%{opacity:1;}70%{opacity:1;}100%{opacity:0;}}.body-preview { background:#190d28; color:#ece5ff; padding:1.4rem; border-radius:1.8rem; white-space:pre-wrap; border:1px solid #b78aff;}</style>
+</head>
+<body>
+<div class="card">
+  <a href="index.html" class="back">← main menu</a>
+  <h2 style="color:white; font-size:2rem;">🇪🇺 EU INSTITUTIONS</h2>
+  <div class="recipient-box"><h3 style="color:#d8b4ff;">📬 send to:</h3><div class="emails" id="eu-emails">HR-Delegations@eeas.europa.eu; RELEX-SANCTIONS@ec.europa.eu; cab-borrell@eeas.europa.eu; COMM-SPP-FOREIGN-AFFAIRS@ec.europa.eu; Anouar.EL-ANOUNI@ec.europa.eu; Anitta.HIPPER@ec.europa.eu</div></div>
+  <div class="btn-group"><button class="btn mobile" id="mobileEU">📱 mobile app</button><button class="btn web" id="webEU">🌐 gmail web</button></div>
+  <div class="copy-section"><h3 style="color:#dbbaff;">📋 manual copy</h3><div class="copy-row"><button class="copy-btn" id="copyAddressesEU">📧 copy addresses</button><button class="copy-btn" id="copySubjectEU">📌 copy subject</button><button class="copy-btn" id="copyBodyEU">📄 copy full email</button></div><div id="successMsgEU"></div>
+  <div><strong style="color:#e5d0ff;">subject:</strong> <span style="color:white;" id="subjectPreviewEU">Immediate EU-Level Action Requested: Imminent Executions and 2,000 Protest Detainees in Iran</span></div>
+  <div class="body-preview" id="bodyPreviewEU">
+Dear High Representative / EU Officials,
+
+We respectfully request urgent European Union intervention regarding credible reports of imminent executions and mass detention of protest-related prisoners in Iran.
+
+Our documentation includes:
+A list of nearly 2,000 detainees (names and surnames)
+Detailed documentation with photographs and basic information for approximately 400 individuals
+
+While complete documentation is not yet available for every individual, the volume and consistency of available evidence indicate serious concerns regarding arbitrary detention and lack of fair trial guarantees.
+
+Available reports suggest:
+Some cases include basic details such as age, city, date of arrest, or photograph
+Many cases remain incomplete or partially documented
+Patterns indicate risks of imminent execution, arbitrary detention, and potential mistreatment, though full legal and health information is not available for most detainees
+
+Full documentation is available here:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+We respectfully urge:
+Immediate public condemnation of imminent executions
+Activation of the EU Global Human Rights Sanctions Regime
+Expansion of targeted sanctions against responsible judicial and prison officials
+Diplomatic engagement demanding suspension of all protest-related death sentences
+
+The EU's unified response can significantly influence outcomes.
+
+Respectfully,
+[Your Name / Country]
+  </div>
+  </div>
+</div>
+<script>
+const emails = ["HR-Delegations@eeas.europa.eu","RELEX-SANCTIONS@ec.europa.eu","cab-borrell@eeas.europa.eu","COMM-SPP-FOREIGN-AFFAIRS@ec.europa.eu","Anouar.EL-ANOUNI@ec.europa.eu","Anitta.HIPPER@ec.europa.eu"];
+const subject = "Immediate EU-Level Action Requested: Imminent Executions and 2,000 Protest Detainees in Iran";
+const body = document.getElementById('bodyPreviewEU').innerText;
+
+function show(id){ const d=document.getElementById(id); d.innerHTML='<div class="success-msg">✓ copied</div>'; setTimeout(()=>d.innerHTML='',2000); }
+document.getElementById('mobileEU').addEventListener('click',()=>{ window.location.href = `mailto:${emails.join(',')}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`; });
+document.getElementById('webEU').addEventListener('click',()=>{ window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${emails.join(',')}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,'_blank'); });
+document.getElementById('copyAddressesEU').addEventListener('click',()=>{ navigator.clipboard.writeText(emails.join('; ')).then(()=>show('successMsgEU')); });
+document.getElementById('copySubjectEU').addEventListener('click',()=>{ navigator.clipboard.writeText(subject).then(()=>show('successMsgEU')); });
+document.getElementById('copyBodyEU').addEventListener('click',()=>{ navigator.clipboard.writeText(body).then(()=>show('successMsgEU')); });
+</script>
+</body>
+</html>

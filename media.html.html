@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Media · Iran alert</title><style>/* same style block again */</style></head>
+<body><div class="card"><a href="index.html" class="back">← main</a><h2>📺 INTERNATIONAL MEDIA</h2><div class="recipient-box"><div class="emails">tips@reuters.com; tips@cnn.com; world@bbc.co.uk; international@theguardian.com; tips@politico.eu</div></div>
+<div class="btn-group"><button class="btn mobile" id="mobileMedia">📱 mobile</button><button class="btn web" id="webMedia">🌐 gmail</button></div>
+<div class="copy-section"><button class="copy-btn" id="copyAddrMedia">📧 addresses</button><button class="copy-btn" id="copySubMedia">📌 subject</button><button class="copy-btn" id="copyBodyMedia">📄 body</button><div id="successMsgMedia"></div>
+<div><strong>subject:</strong> Media Alert: 2,000 Protest Detainees and Imminent Execution Risk in Iran</div>
+<div class="body-preview" id="bodyMedia">
+Dear Editor,
+
+We are alerting you to credible reports of imminent executions and large-scale protest-related detentions in Iran.
+
+Our documentation includes:
+A list of nearly 2,000 detainees
+Approximately 400 cases with photographs and basic details
+
+Not all cases contain complete documentation; available reports indicate serious concerns about arbitrary detention and risk of imminent execution, though full legal and health information is not available for most detainees.
+
+Full documentation:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+Given the urgency of execution risks, international media coverage may generate critical diplomatic pressure.
+
+We respectfully invite your review and reporting consideration.
+
+Sincerely,
+[Your Name / Country]
+</div></div>
+<script>
+const mediaMails = ["tips@reuters.com","tips@cnn.com","world@bbc.co.uk","international@theguardian.com","tips@politico.eu"];
+const subjMedia = "Media Alert: 2,000 Protest Detainees and Imminent Execution Risk in Iran";
+const bodyMedia = document.getElementById('bodyMedia').innerText;
+function showMedia(id){document.getElementById(id).innerHTML='<div class="success-msg">✓ copied</div>'; setTimeout(()=>document.getElementById(id).innerHTML='',2000);}
+document.getElementById('mobileMedia').onclick = ()=> location.href = `mailto:${mediaMails.join(',')}?subject=${encodeURIComponent(subjMedia)}&body=${encodeURIComponent(bodyMedia)}`;
+document.getElementById('webMedia').onclick = ()=> window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${mediaMails.join(',')}&su=${encodeURIComponent(subjMedia)}&body=${encodeURIComponent(bodyMedia)}`);
+document.getElementById('copyAddrMedia').onclick = ()=> navigator.clipboard.writeText(mediaMails.join('; ')).then(()=>showMedia('successMsgMedia'));
+document.getElementById('copySubMedia').onclick = ()=> navigator.clipboard.writeText(subjMedia).then(()=>showMedia('successMsgMedia'));
+document.getElementById('copyBodyMedia').onclick = ()=> navigator.clipboard.writeText(bodyMedia).then(()=>showMedia('successMsgMedia'));
+</script></body></html>

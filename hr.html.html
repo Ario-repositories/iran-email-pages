@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Human rights orgs · Iran</title><style>/* identical style block, shortened for output */</style></head>
+<body><div class="card"><a href="index.html" class="back">← main</a><h2>🤝 HUMAN RIGHTS ORGS</h2><div class="recipient-box"><div class="emails">contactus@amnesty.org; media@amnesty.ca; hrwpress@hrw.org; fidh@fidh.org; info@icj.org; belgium@hrw.org; berlin@hrw.org</div></div>
+<div class="btn-group"><button class="btn mobile" id="mobileHr">📱 mobile</button><button class="btn web" id="webHr">🌐 gmail</button></div>
+<div class="copy-section"><button class="copy-btn" id="copyAddrH">📧 addresses</button><button class="copy-btn" id="copySubH">📌 subject</button><button class="copy-btn" id="copyBodyH">📄 body</button><div id="successMsgH"></div>
+<div><strong>subject:</strong> Urgent Advocacy Request: 2,000 Protest Detainees and Imminent Executions in Iran</div>
+<div class="body-preview" id="bodyHr">
+Dear Human Rights Colleagues,
+
+We seek urgent advocacy support regarding credible reports of imminent executions and large-scale protest-related detentions in Iran.
+
+Documentation includes:
+Nearly 2,000 detainee names
+Approximately 400 cases with photographs and basic details
+
+While documentation is incomplete for many cases, available information highlights serious concerns about arbitrary detention and risk of imminent execution.
+
+Full documentation:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+We respectfully request:
+Urgent action appeals
+Public reporting and emergency statements
+Engagement with UN mechanisms
+Legal analysis support
+
+International advocacy visibility may help prevent executions.
+
+Sincerely,
+[Your Name / Country]
+</div></div>
+<script>const hrMails = ["contactus@amnesty.org","media@amnesty.ca","hrwpress@hrw.org","fidh@fidh.org","info@icj.org","belgium@hrw.org","berlin@hrw.org"];
+const subjHr = "Urgent Advocacy Request: 2,000 Protest Detainees and Imminent Executions in Iran";
+const bodyHr = document.getElementById('bodyHr').innerText;
+function showH(id){document.getElementById(id).innerHTML='<div class="success-msg">✓ copied</div>'; setTimeout(()=>document.getElementById(id).innerHTML='',2000);}
+document.getElementById('mobileHr').onclick = ()=> location.href = `mailto:${hrMails.join(',')}?subject=${encodeURIComponent(subjHr)}&body=${encodeURIComponent(bodyHr)}`;
+document.getElementById('webHr').onclick = ()=> window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${hrMails.join(',')}&su=${encodeURIComponent(subjHr)}&body=${encodeURIComponent(bodyHr)}`);
+document.getElementById('copyAddrH').onclick = ()=> navigator.clipboard.writeText(hrMails.join('; ')).then(()=>showH('successMsgH'));
+document.getElementById('copySubH').onclick = ()=> navigator.clipboard.writeText(subjHr).then(()=>showH('successMsgH'));
+document.getElementById('copyBodyH').onclick = ()=> navigator.clipboard.writeText(bodyHr).then(()=>showH('successMsgH'));
+</script></body></html>

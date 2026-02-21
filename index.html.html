@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRAN ALERT · main menu</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #2b1a4a 0%, #4a2b7a 50%, #6b3f9e 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .card {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 3rem;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 0.4rem;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .sub {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 2.4rem;
+      border-left: 4px solid #c084fc;
+      padding-left: 1.2rem;
+    }
+
+    .grid-buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem;
+      margin: 2rem 0 1rem;
+    }
+
+    .menu-btn {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 3rem;
+      padding: 1.4rem 0.8rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: 0.25s ease;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #f0e6ff;
+      transform: scale(1.02);
+      box-shadow: 0 20px 30px rgba(106, 13, 173, 0.5);
+    }
+
+    .footer-note {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.9rem;
+      margin-top: 2.8rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.8rem;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.2rem; border-radius: 2rem; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🇮🇷 IRAN · human rights</h1>
+    <div class="sub">pre‑written email alerts – choose recipient</div>
+    <div class="grid-buttons">
+      <a href="un.html" class="menu-btn">🇺🇳 UNITED NATIONS</a>
+      <a href="eu.html" class="menu-btn">🇪🇺 EU INSTITUTIONS</a>
+      <a href="members.html" class="menu-btn">🇩🇪 EU MEMBERS + UK</a>
+      <a href="sanctions.html" class="menu-btn">⚖️ SANCTIONS REQUEST</a>
+      <a href="hr.html" class="menu-btn">🤝 HUMAN RIGHTS ORGS</a>
+      <a href="media.html" class="menu-btn">📺 INTERNATIONAL MEDIA</a>
+    </div>
+    <div class="footer-note">tap any button — pre‑filled emails • copy with one click</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UN · Iran alert</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+    body { background: linear-gradient(145deg, #2b1a4a, #4a2b7a, #6b3f9e); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1.2rem; }
+    .card { max-width: 950px; width: 100%; background: rgba(0,0,0,0.3); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.15); border-radius: 2.5rem; padding: 2rem; box-shadow: 0 30px 50px #00000060; }
+    h2 { color: white; font-size: 2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; margin-bottom: 1.8rem; border-bottom: 2px solid #a56eff; padding-bottom: 0.6rem; }
+    .back { display: inline-block; margin-bottom: 1.5rem; background: rgba(255,255,255,0.1); padding: 0.4rem 1.2rem; border-radius: 40px; color: white; text-decoration: none; font-weight: 500; width: fit-content; border: 1px solid rgba(255,255,255,0.3); }
+    .recipient-box { background: rgba(20, 10, 40, 0.7); border-radius: 2rem; padding: 1.5rem; margin-bottom: 1.8rem; border: 1px solid #9f7aea80; }
+    .recipient-box h3 { color: #d8b4ff; font-weight: 500; letter-spacing: 0.3px; margin-bottom: 0.8rem; font-size: 1.1rem; }
+    .emails { color: #ffffffcc; font-size: 1.1rem; word-break: break-word; background: #1e102e; padding: 1rem 1.5rem; border-radius: 3rem; display: inline-block; border: 1px solid #c084fc; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.8rem 0 2rem; }
+    .btn { border: none; padding: 1rem 2rem; border-radius: 60px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: 0.2s; color: white; box-shadow: 0 8px 18px black; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); }
+    .btn.mobile { background: #1f8b4c; } .btn.mobile:hover { background: #2ea86b; }
+    .btn.web { background: #1f4f8b; } .btn.web:hover { background: #2a69b3; }
+    .copy-section { background: rgba(0,0,0,0.5); border-radius: 2rem; padding: 1.8rem; margin: 1.8rem 0; border: 1px solid #8a6de0; }
+    .copy-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1rem 0; }
+    .copy-btn { background: #352b55; border: 1px solid #ba9eff; padding: 0.8rem 1.8rem; border-radius: 3rem; font-weight: 500; color: white; cursor: pointer; transition: 0.15s; } 
+    .copy-btn:hover { background: #58448b; }
+    .success-msg { background: #1f8b4c; color: white; padding: 0.7rem 1.5rem; border-radius: 100px; font-weight: 500; animation: fade 2s ease forwards; margin-top: 1rem; }
+    @keyframes fade { 0% { opacity:1; } 70% { opacity:1; } 100% { opacity:0; } }
+    .body-preview { background: #190d28; color: #ece5ff; padding: 1.4rem; border-radius: 1.8rem; white-space: pre-wrap; font-size: 0.95rem; border: 1px solid #b78aff; max-height: 280px; overflow-y: auto; margin-top: 1rem; }
+    .instruction { color: #cdc0ff; margin-top: 2rem; font-size: 1rem; }
+  </style>
+</head>
+<body>
+<div class="card">
+  <a href="index.html" class="back">← main menu</a>
+  <h2>🇺🇳 UNITED NATIONS</h2>
+  <div class="recipient-box"><h3>📬 send to:</h3><div class="emails" id="un-emails">ohchr-sr-iran@un.org; ohchr-eje@un.org; ohchr-wgad@un.org; ohchr-InfoDesk@un.org; InfoDesk@ohchr.org; press_geneva@un.org; hqsw00@unhcr.org</div></div>
+  
+  <div class="btn-group">
+    <button class="btn mobile" id="mobileUN">📱 mobile app (mailto:)</button>
+    <button class="btn web" id="webUN">🌐 gmail web</button>
+  </div>
+
+  <div class="copy-section">
+    <h3 style="color:#dbbaff;">📋 manual copy</h3>
+    <div class="copy-row">
+      <button class="copy-btn" id="copyAddressesUN">📧 copy addresses</button>
+      <button class="copy-btn" id="copySubjectUN">📌 copy subject</button>
+      <button class="copy-btn" id="copyBodyUN">📄 copy full email</button>
+    </div>
+    <div id="successMsgUN" style="min-height: 2.5rem;"></div>
+    <div><strong style="color:#e5d0ff;">subject:</strong> <span id="subjectPreviewUN" style="color:white;">URGENT: Imminent Executions and Mass Arbitrary Detention in Iran – Immediate UN Action Requested</span></div>
+    <div class="body-preview" id="bodyPreviewUN">
+Dear Sir or Madam,
+
+We urgently submit documentation concerning credible reports of imminent executions and large-scale protest-related detentions in Iran.
+
+Our documentation includes:
+A compiled list of nearly 2,000 detainees (PDF – names and surnames)
+Detailed case files, photographs, and available information for approximately 400 individuals
+
+While not all cases are fully documented, the materials indicate serious concerns regarding arbitrary detention and potential violations of international human rights obligations.
+
+Available reports suggest:
+Some individuals include basic information such as age, city, date of arrest, or photograph, but this is inconsistent
+Many cases remain largely undocumented or incomplete
+Patterns suggest risks of imminent execution, arbitrary detention, and lack of due process, though full legal and health details are not available for most detainees
+
+All materials are accessible here:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+Given the immediacy of reported execution risks, we respectfully request:
+Urgent communication with Iranian authorities
+Public statement demanding suspension of protest-related executions
+Activation of relevant Special Procedures
+Monitoring and reporting on detention conditions
+
+Swift international engagement may prevent irreversible harm.
+
+Respectfully,
+[Your Name / Country]
+    </div>
+  </div>
+  <div class="instruction">⬆️ use copy buttons or send directly via mobile/web.</div>
+</div>
+<script>
+const unEmails = ["ohchr-sr-iran@un.org", "ohchr-eje@un.org", "ohchr-wgad@un.org", "ohchr-InfoDesk@un.org", "InfoDesk@ohchr.org", "press_geneva@un.org", "hqsw00@unhcr.org"];
+const subjectUN = "URGENT: Imminent Executions and Mass Arbitrary Detention in Iran – Immediate UN Action Requested";
+const bodyUN = `Dear Sir or Madam,
+
+We urgently submit documentation concerning credible reports of imminent executions and large-scale protest-related detentions in Iran.
+
+Our documentation includes:
+A compiled list of nearly 2,000 detainees (PDF – names and surnames)
+Detailed case files, photographs, and available information for approximately 400 individuals
+
+While not all cases are fully documented, the materials indicate serious concerns regarding arbitrary detention and potential violations of international human rights obligations.
+
+Available reports suggest:
+Some individuals include basic information such as age, city, date of arrest, or photograph, but this is inconsistent
+Many cases remain largely undocumented or incomplete
+Patterns suggest risks of imminent execution, arbitrary detention, and lack of due process, though full legal and health details are not available for most detainees
+
+All materials are accessible here:
+https://drive.google.com/drive/folders/1uNe75UZbO9qUUUThOgjbgXfuVohrvgG_?usp=sharing
+
+Given the immediacy of reported execution risks, we respectfully request:
+Urgent communication with Iranian authorities
+Public statement demanding suspension of protest-related executions
+Activation of relevant Special Procedures
+Monitoring and reporting on detention conditions
+
+Swift international engagement may prevent irreversible harm.
+
+Respectfully,
+[Your Name / Country]`;
+
+function showSuccess(containerId) {
+  const div = document.getElementById(containerId);
+  div.innerHTML = '<div class="success-msg">✓ copied to clipboard</div>';
+  setTimeout(() => div.innerHTML = '', 2000);
+}
+
+// mobile (mailto)
+document.getElementById('mobileUN').addEventListener('click', ()=>{
+  const mailto = `mailto:${unEmails.join(',')}?subject=${encodeURIComponent(subjectUN)}&body=${encodeURIComponent(bodyUN)}`;
+  window.location.href = mailto;
+});
+// web (gmail)
+document.getElementById('webUN').addEventListener('click', ()=>{
+  const webUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${unEmails.join(',')}&su=${encodeURIComponent(subjectUN)}&body=${encodeURIComponent(bodyUN)}`;
+  window.open(webUrl, '_blank');
+});
+
+// copies
+document.getElementById('copyAddressesUN').addEventListener('click', ()=>{
+  navigator.clipboard.writeText(unEmails.join('; ')).then(()=> showSuccess('successMsgUN'));
+});
+document.getElementById('copySubjectUN').addEventListener('click', ()=>{
+  navigator.clipboard.writeText(subjectUN).then(()=> showSuccess('successMsgUN'));
+});
+document.getElementById('copyBodyUN').addEventListener('click', ()=>{
+  navigator.clipboard.writeText(bodyUN).then(()=> showSuccess('successMsgUN'));
+});
+</script>
+</body>
+</html>
